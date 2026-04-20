@@ -207,6 +207,31 @@ body {
   font-size: 0.82rem;
 }
 
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.legend-dot.osint {
+  background: #16a34a;
+}
+
+.legend-dot.humint {
+  background: #2563eb;
+}
+
+.legend-dot.imint {
+  background: #9333ea;
+}
+
 .osint {
   color: #15803d;
 }

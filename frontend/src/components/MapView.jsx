@@ -16,7 +16,7 @@ const typeStyleMap = {
 const getImageUrl = (imageUrl) => {
   if (!imageUrl) return "";
   if (imageUrl.startsWith("http")) return imageUrl;
-  const base = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+  const base = import.meta.env.VITE_API_BASE_URL || "http://localhost:5002";
   return `${base}${imageUrl}`;
 };
 
@@ -73,9 +73,18 @@ function MapView({ data }) {
         </MapContainer>
         <div className="map-legend-overlay">
           <h4>Legend</h4>
-          <p className="osint">🟢 OSINT</p>
-          <p className="humint">🔵 HUMINT</p>
-          <p className="imint">🟣 IMINT</p>
+          <p className="legend-item">
+            <span className="legend-dot osint" aria-hidden="true" />
+            OSINT
+          </p>
+          <p className="legend-item">
+            <span className="legend-dot humint" aria-hidden="true" />
+            HUMINT
+          </p>
+          <p className="legend-item">
+            <span className="legend-dot imint" aria-hidden="true" />
+            IMINT
+          </p>
         </div>
       </div>
     </section>
