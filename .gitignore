@@ -1,0 +1,25 @@
+# Node
+node_modules/
+dist/
+build/
+
+# Env files
+.env
+backend/.env
+frontend/.env
+
+# Python (if used)
+.venv/
+__pycache__/
+
+# Uploads
+backend/uploads/
+
+# Logs
+*.log
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
