@@ -1,3 +1,407 @@
+# 🚀 FusionVision - Multi-Source Intelligence Dashboard
+
+> A full-stack geospatial system for multi-source data fusion and real-time visualization.
+
+FusionVision is a production-style intelligence dashboard that ingests heterogeneous data sources (JSON, CSV, Images), classifies them into structured intelligence categories, and visualizes them on an interactive geospatial map for real-time situational awareness.
+
+---
+
+## 🌍 Why This Matters
+
+Modern intelligence systems often suffer from fragmented data and lack of unified visibility.
+
+FusionVision addresses this by:
+
+- Aggregating multi-source data into a single platform
+- Providing real-time geospatial insights
+- Enabling faster and more informed decision-making
+
+Applicable domains:
+
+- Smart cities
+- Security monitoring
+- Logistics and operations intelligence
+
+---
+
+## ✨ Key Highlights
+
+- End-to-end full-stack system (React + Node.js + MongoDB)
+- Multi-format data ingestion (JSON, CSV, Excel, Images)
+- Real-time geospatial visualization using Leaflet
+- Structured classification: OSINT, HUMINT, IMINT
+- Interactive UI with hover-based insights
+- Clean and modular backend architecture
+- Demo simulation for quick testing
+
+---
+
+## 🏗️ Architecture
+
+```text
+Frontend (React + Leaflet)
+        ↓
+Backend (Node.js + Express)
+        ↓
+MongoDB (Database)
+```
+
+## 🔄 How It Works
+
+1. User uploads data (JSON, CSV, Image, or manual input)
+2. Backend parses and validates the input
+3. Data is classified into:
+   - OSINT (structured data)
+   - HUMINT (manual input)
+   - IMINT (image-based)
+4. Data is stored in MongoDB
+5. Frontend fetches and displays markers on map
+6. Hover interaction reveals detailed intelligence insights
+
+## 🗄️ Database Schema
+
+```json
+{
+  "type": "OSINT | HUMINT | IMINT",
+  "lat": "Number",
+  "lng": "Number",
+  "description": "String",
+  "imageUrl": "String",
+  "timestamp": "Date"
+}
+```
+
+## 🧪 API Endpoints
+
+- `POST /api/data/upload` -> Upload multi-source data
+- `GET /api/data/all` -> Retrieve all data
+- `GET /api/data/type/:type` -> Filter by type
+- `GET /api/summary` -> Dashboard stats
+- `POST /api/data/demo-seed` -> Generate demo data
+
+## 🎨 Features
+
+### 📍 Geospatial Dashboard
+
+- Interactive Leaflet map
+- Color-coded markers:
+  - 🟢 OSINT
+  - 🔵 HUMINT
+  - 🟣 IMINT
+
+### 🧠 Intelligence Visualization
+
+- Hover popups displaying:
+  - Description
+  - Source type
+  - Timestamp
+  - Image preview (for IMINT)
+
+### 📤 Data Ingestion
+
+- Upload:
+  - JSON
+  - CSV / Excel
+  - Images
+  - Manual data entry
+
+### 📊 Dashboard Insights
+
+- Total records
+- Count by type
+- Real-time updates
+
+### 🎯 Interaction
+
+- Filter by type
+- Search functionality
+- Demo seed for quick testing
+
+## ⚙️ Environment Setup
+
+### Backend (`backend/.env`)
+
+```env
+PORT=5002
+MONGO_URI=mongodb://127.0.0.1:27017/fusionvision
+CLIENT_URL=http://localhost:5173
+UPLOAD_PATH=uploads/
+NODE_ENV=development
+```
+
+### Frontend (`frontend/.env`)
+
+```env
+VITE_API_BASE_URL=http://localhost:5002
+```
+
+## ▶️ Run Locally
+
+### Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### MongoDB
+
+```bash
+mongod
+```
+
+## 🎬 Demo Flow
+
+1. Upload JSON -> markers appear on map
+2. Upload image -> IMINT (purple) marker appears
+3. Hover marker -> view details + image preview
+4. Apply filters to explore data types
+5. Observe dashboard updates
+
+## ⚠️ Design Decisions
+
+- MongoDB for flexible schema (supports heterogeneous data)
+- Leaflet for lightweight geospatial rendering
+- Backend-based classification for consistency
+- Demo seed API for quick evaluation without external data
+
+## 🛡️ Edge Cases Handled
+
+- Invalid file uploads
+- Missing coordinates
+- Empty datasets
+- Backend/DB failure handling
+- Safe image rendering
+
+## 🚀 Future Improvements
+
+- Real-time updates via WebSockets
+- AI-based anomaly detection (future extension)
+- Role-based access control
+- Cloud deployment (AWS/GCP)
+
+## 📂 Project Structure
+
+```text
+fusionvision-dashboard/
+ ├── frontend/   -> React UI
+ ├── backend/    -> API server
+```
+
+## 👨‍💻 Author
+
+Nitish Kumar Choudhary
+# 🚀 FusionVision - Multi-Source Intelligence Dashboard
+
+> A full-stack geospatial system for multi-source data fusion and real-time visualization.
+
+FusionVision is a production-style intelligence dashboard that ingests heterogeneous data sources (JSON, CSV, Images), classifies them into structured intelligence categories, and visualizes them on an interactive geospatial map for real-time situational awareness.
+
+---
+
+## 🌍 Why This Matters
+
+Modern intelligence systems often suffer from fragmented data and lack of unified visibility.
+
+FusionVision addresses this by:
+
+- Aggregating multi-source data into a single platform
+- Providing real-time geospatial insights
+- Enabling faster and more informed decision-making
+
+Applicable domains:
+
+- Smart cities
+- Security monitoring
+- Logistics and operations intelligence
+
+---
+
+## ✨ Key Highlights
+
+- End-to-end full-stack system (React + Node.js + MongoDB)
+- Multi-format data ingestion (JSON, CSV, Excel, Images)
+- Real-time geospatial visualization using Leaflet
+- Structured classification: OSINT, HUMINT, IMINT
+- Interactive UI with hover-based insights
+- Clean and modular backend architecture
+- Demo simulation for quick testing
+
+---
+
+## 🏗️ Architecture
+
+```text
+Frontend (React + Leaflet)
+        ↓
+Backend (Node.js + Express)
+        ↓
+MongoDB (Database)
+```
+
+## 🔄 How It Works
+
+1. User uploads data (JSON, CSV, Image, or manual input)
+2. Backend parses and validates the input
+3. Data is classified into:
+   - OSINT (structured data)
+   - HUMINT (manual input)
+   - IMINT (image-based)
+4. Data is stored in MongoDB
+5. Frontend fetches and displays markers on map
+6. Hover interaction reveals detailed intelligence insights
+
+## 🗄️ Database Schema
+
+```json
+{
+  "type": "OSINT | HUMINT | IMINT",
+  "lat": "Number",
+  "lng": "Number",
+  "description": "String",
+  "imageUrl": "String",
+  "timestamp": "Date"
+}
+```
+
+## 🧪 API Endpoints
+
+- `POST /api/data/upload` -> Upload multi-source data
+- `GET /api/data/all` -> Retrieve all data
+- `GET /api/data/type/:type` -> Filter by type
+- `GET /api/summary` -> Dashboard stats
+- `POST /api/data/demo-seed` -> Generate demo data
+
+## 🎨 Features
+
+### 📍 Geospatial Dashboard
+
+- Interactive Leaflet map
+- Color-coded markers:
+  - 🟢 OSINT
+  - 🔵 HUMINT
+  - 🟣 IMINT
+
+### 🧠 Intelligence Visualization
+
+- Hover popups displaying:
+  - Description
+  - Source type
+  - Timestamp
+  - Image preview (for IMINT)
+
+### 📤 Data Ingestion
+
+- Upload:
+  - JSON
+  - CSV / Excel
+  - Images
+  - Manual data entry
+
+### 📊 Dashboard Insights
+
+- Total records
+- Count by type
+- Real-time updates
+
+### 🎯 Interaction
+
+- Filter by type
+- Search functionality
+- Demo seed for quick testing
+
+## ⚙️ Environment Setup
+
+### Backend (`backend/.env`)
+
+```env
+PORT=5002
+MONGO_URI=mongodb://127.0.0.1:27017/fusionvision
+CLIENT_URL=http://localhost:5173
+UPLOAD_PATH=uploads/
+NODE_ENV=development
+```
+
+### Frontend (`frontend/.env`)
+
+```env
+VITE_API_BASE_URL=http://localhost:5002
+```
+
+## ▶️ Run Locally
+
+### Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### MongoDB
+
+```bash
+mongod
+```
+
+## 🎬 Demo Flow
+
+1. Upload JSON -> markers appear on map
+2. Upload image -> IMINT (purple) marker appears
+3. Hover marker -> view details + image preview
+4. Apply filters to explore data types
+5. Observe dashboard updates
+
+## ⚠️ Design Decisions
+
+- MongoDB for flexible schema (supports heterogeneous data)
+- Leaflet for lightweight geospatial rendering
+- Backend-based classification for consistency
+- Demo seed API for quick evaluation without external data
+
+## 🛡️ Edge Cases Handled
+
+- Invalid file uploads
+- Missing coordinates
+- Empty datasets
+- Backend/DB failure handling
+- Safe image rendering
+
+## 🚀 Future Improvements
+
+- Real-time updates via WebSockets
+- AI-based anomaly detection (future extension)
+- Role-based access control
+- Cloud deployment (AWS/GCP)
+
+## 📂 Project Structure
+
+```text
+fusionvision-dashboard/
+ ├── frontend/   -> React UI
+ ├── backend/    -> API server
+```
+
+## 👨‍💻 Author
+
+Nitish Kumar Choudhary
 # 🚀 FusionVision AI
 
 > A full-stack geospatial intelligence system for multi-source data fusion and real-time visualization.
